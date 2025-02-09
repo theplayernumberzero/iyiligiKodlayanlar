@@ -174,4 +174,42 @@ void main() {
   //koşullar ve veri tiplerini kullanarak örnek hesaplamalar
   //İki sayı tanımlıyoruz. bu iki sayı üzerine 4 işlem uygula
   //Ayrıca bu verdiğimiz iki sayıdan hangisinin büyük olup olmadığını yazın.
+
+  double number1 = 10;
+  double number2 = 20;
+
+  double hmSonuc = 0;
+  double max = 0;
+  double min = 0;
+
+  //hmSonuc = number1 + number2;
+  //hmSonuc = number1 - number2;
+  //hmSonuc = number1 * number2;
+  hmSonuc = number1 / number2;
+
+  if (number1 >= number2) {
+    if (number1 >= hmSonuc)
+      max = number1;
+    else
+      max = hmSonuc;
+  } else {
+    if (number2 >= hmSonuc)
+      max = number2;
+    else
+      max = hmSonuc;
+  }
+
+  if (number1 <= number2) {
+    if (number1 <= hmSonuc)
+      min = number1;
+    else
+      min = hmSonuc;
+  } else {
+    if (number2 <= hmSonuc)
+      min = number2;
+    else
+      min = hmSonuc;
+  }
+  print(
+      "Number 1: $number1, Number 2: $number2 and Sum: $hmSonuc. The biggest number is: $max and the smallest number is: $min");
 }
