@@ -4,6 +4,17 @@ import 'package:firebase_lesson/model/product_model.dart';
 class ProductService {
   final productCollection = FirebaseFirestore.instance.collection("products");
 
+  //class atrribute lerini direk kendi içlerinde kullanamıyorduk. Get ile bu sorunu halletmiş oluruz.
+  CollectionReference<ProductModel?> get productCollectionConvertor =>
+      productCollection.withConverter<ProductModel?>(
+        fromFirestore: (snapshot, _) {
+          final jsonData = snapshot.data();
+          if (jsonData == null) return null;
+          return ProductModel.fromJson({...jsonData, 'id': snapshot.id});
+        },
+        toFirestore: (product, _) => product?.toJson() ?? {},
+      );
+
   Future<List<ProductModel>> getProductList() async {
     final snapshot = await productCollection.get();
     final productList = <ProductModel>[];

@@ -18,4 +18,13 @@ class ProductModel {
   Map<String, dynamic> toJson() {
     return {'title': title, 'count': count, 'isDelivered': isDelivered};
   }
+
+  ProductModel copyWith({String? title, int? count, bool? isDelivered}) {
+    return ProductModel(
+      id: id,
+      title: title ?? this.title,
+      count: count ?? this.count,
+      isDelivered: isDelivered ?? this.isDelivered,
+    );
+  }
 }

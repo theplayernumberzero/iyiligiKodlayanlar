@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_lesson/firebase_options.dart';
+import 'package:firebase_lesson/views/firebase_ui_screen.dart';
 import 'package:firebase_lesson/views/main_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MainPage(),
+      home: FirebaseUiScreen(),
     );
   }
 }
